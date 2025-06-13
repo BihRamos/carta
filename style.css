@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.envelope {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  background: #e91e63;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.envelope .flap {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 50px solid #e91e63;
+}
+
+.envelope .heart {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.envelope:hover .heart {
+  transform: translateX(-50%) scale(1.2);
+}
+
+.card {
+  display: none;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 500px;
+  text-align: center;
+  margin-top: 30px;
+  animation: aparecer 1s ease;
+  z-index: 1;
+}
+
+.card h1 {
+  color: #e91e63;
+}
+
+.card p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.foto-container {
+  margin-top: 20px;
+}
+
+#foto-romantica {
+  width: 80%;
+  max-width: 300px; /* diminui o máximo */
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; /* centralizar */
+  display: block;
+}
+.surpresa {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #880e4f;
+}
+.heart-fall {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  color: #ff5e99;
+  animation: fall 5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.btn-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 3;
+  transition: background 0.3s ease;
+}
+
+.btn-musica:hover {
+  background-color: #c2185b;
+}
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
